@@ -5,43 +5,45 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Modular Control Panel</title>
+  <title>CSS-Modules</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <label for="make3D">
-      <input type="checkbox" name="make3D" id="make3D">
-      Make 3D
-    </label>
-    <label for="giveDepth">
-      <input type="checkbox" name="giveDepth" id="giveDepth">
-      Give Depth
-    </label>
-    <label for="giveCorners">
-      <input type="checkbox" name="giveCorners" id="giveCorners">
-      Give Corners
-    </label>
-    <label for="debug">
-      <input type="checkbox" name="debug" id="debug">
-      Debug
-    </label>
-  </header>
+  <article>
+    <header>
+      <h1>Please download Chrome Dev ☹️</h1>
+    </header>
+    <div>
+      <p>To properly view this page you need to have a chromium based <i>dev</i> browser with the experimental web features flag enabled.</p>
+    </div>
+  </article>
+  <div>
+    <input type="radio" name="controls" id="showNone">
+    <input type="radio" name="controls" id="showInterpolationSection">
+    <input type="radio" name="controls" id="showP3Section">
+    <input type="radio" name="controls" id="showNestingSection">
+    <input type="checkbox" name="oldInterpolation" id="oldInterpolation">
+    <input type="checkbox" name="oldColor" id="oldColor">
+  </div>
   <main>
     <ul>
       <li>
+        <label for="showInterpolationSection"></label>
         <section>
-          <input type="checkbox" name="" id="">
+          <div></div>
         </section>
+        <!-- Faces -->
         <section>
           <!-- Front -->
           <div></div>
           <!-- Back -->
           <div></div>
+
           <!-- Right -->
           <div></div>
           <!-- Left -->
           <div></div>
+
           <!-- Top -->
           <div></div>
           <!-- Bottom -->
@@ -49,18 +51,22 @@
         </section>
       </li>
       <li>
+        <label for="showP3Section"></label>
         <section>
-          <input type="checkbox" name="" id="">
+          <div></div>
         </section>
+        <!-- Faces -->
         <section>
           <!-- Front -->
           <div></div>
           <!-- Back -->
           <div></div>
+
           <!-- Right -->
           <div></div>
           <!-- Left -->
           <div></div>
+
           <!-- Top -->
           <div></div>
           <!-- Bottom -->
@@ -68,151 +74,22 @@
         </section>
       </li>
       <li>
+        <label for="showNestingSection"></label>
         <section>
-          <input type="checkbox" name="" id="">
+          <div></div>
         </section>
+        <!-- Faces -->
         <section>
           <!-- Front -->
           <div></div>
           <!-- Back -->
           <div></div>
+
           <!-- Right -->
           <div></div>
           <!-- Left -->
           <div></div>
-          <!-- Top -->
-          <div></div>
-          <!-- Bottom -->
-          <div></div>
-        </section>
-      </li>
-      <li>
-        <section>
-          <input type="checkbox" name="" id="">
-        </section>
-        <section>
-          <!-- Front -->
-          <div></div>
-          <!-- Back -->
-          <div></div>
-          <!-- Right -->
-          <div></div>
-          <!-- Left -->
-          <div></div>
-          <!-- Top -->
-          <div></div>
-          <!-- Bottom -->
-          <div></div>
-        </section>
-      </li>
-      <li>
-        <section>
-          <input type="checkbox" name="" id="">
-        </section>
-        <section>
-          <!-- Front -->
-          <div></div>
-          <!-- Back -->
-          <div></div>
-          <!-- Right -->
-          <div></div>
-          <!-- Left -->
-          <div></div>
-          <!-- Top -->
-          <div></div>
-          <!-- Bottom -->
-          <div></div>
-        </section>
-      </li>
-      <li>
-        <section>
-          <input type="checkbox" name="" id="">
-        </section>
-        <section>
-          <!-- Front -->
-          <div></div>
-          <!-- Back -->
-          <div></div>
-          <!-- Right -->
-          <div></div>
-          <!-- Left -->
-          <div></div>
-          <!-- Top -->
-          <div></div>
-          <!-- Bottom -->
-          <div></div>
-        </section>
-      </li>
-      <li>
-        <section>
-          <input type="checkbox" name="" id="">
-        </section>
-        <section>
-          <!-- Front -->
-          <div></div>
-          <!-- Back -->
-          <div></div>
-          <!-- Right -->
-          <div></div>
-          <!-- Left -->
-          <div></div>
-          <!-- Top -->
-          <div></div>
-          <!-- Bottom -->
-          <div></div>
-        </section>
-      </li>
-      <li>
-        <section>
-          <input type="checkbox" name="" id="">
-        </section>
-        <section>
-          <!-- Front -->
-          <div></div>
-          <!-- Back -->
-          <div></div>
-          <!-- Right -->
-          <div></div>
-          <!-- Left -->
-          <div></div>
-          <!-- Top -->
-          <div></div>
-          <!-- Bottom -->
-          <div></div>
-        </section>
-      </li>
-      <li>
-        <section>
-          <input type="checkbox" name="" id="">
-        </section>
-        <section>
-          <!-- Front -->
-          <div></div>
-          <!-- Back -->
-          <div></div>
-          <!-- Right -->
-          <div></div>
-          <!-- Left -->
-          <div></div>
-          <!-- Top -->
-          <div></div>
-          <!-- Bottom -->
-          <div></div>
-        </section>
-      </li>
-      <li>
-        <section>
-          <input type="checkbox" name="" id="">
-        </section>
-        <section>
-          <!-- Front -->
-          <div></div>
-          <!-- Back -->
-          <div></div>
-          <!-- Right -->
-          <div></div>
-          <!-- Left -->
-          <div></div>
+
           <!-- Top -->
           <div></div>
           <!-- Bottom -->
@@ -220,7 +97,59 @@
         </section>
       </li>
     </ul>
-
   </main>
+  <aside>
+  <!-- Gradient Interpolation Window -->
+    <article>
+        <header>
+          <h1>Animating Gradients is now possible! 🎉</h1>
+          <button><label for="showNone">X</label></button>
+        </header>
+        <div>
+          <h1>Thanks to the custom <code>@property</code></h1>
+          <p>Before <i>custom properties</i> were a thing animating CSS-gradients was not possible without using some kind of hack.</p>
+          <p>So you either made a huge gradient background and animate the position. Or you ended up with a harsh animation.</p>
+          <p><strong>Click on the button below to see what it used to look like</strong></p>
+          <p><button><label for="oldInterpolation">Go back to the <i>good</i> old days</label></button> <button><label for="oldInterpolation">Ugly, huh? Click me to go back to the good new days</label></button></p>
+          <p><img src="assets/cp-1.png" alt=""></p>
+        </div>
+    </article>
+    <!-- Display P3 Window -->
+    <article>
+      <header>
+        <h1>Wow so beautiful 😱</h1>
+        <button><label for="showNone">X</label></button>
+      </header>
+      <div>
+        <h1>Thanks to the brand-new <code>color()</code> function with Display-P3</h1>
+        <p><code>display-p3</code> is a <i>color profile</i> by Apple that displays more vibrant colors</p>
+        <p>
+          If you have a high-end screen and are on safari or on chromium based browsers
+          with the <i>force color profile</i> flag set to display-p3 click the button below to see what it looks like in RGB!
+        </p>
+        <p><button><label for="oldColor">Go back to the <i>good</i> old days</label></button><button><label for="oldColor">Ugly, huh? Click me to go back to the good new days</label></button></p>
+        <p><img src="assets/p3-1.png" alt=""></p>
+      </div>
+    </article>
+    <!-- CSS Nesting -->
+    <article>
+      <header>
+        <h1><strong>C</strong>ozy Cascading Stylesheet? 🦄</h1>
+        <button><label for="showNone">X</label></button>
+      </header>
+      <div>
+        <h1>A warm-welcome to CSS-nesting. The cozy way of writing CSS</h1>
+        <p>Stop relying on CSS preprocessors for your CSS-nesting with the CSS-nesting module 1 introduced earlier this year.</p>
+        <p><strong>Though it's barely supported anywhere <i>yet</i>:</strong></p>
+        <p>
+          <img src="assets/caniuse-nesting.png" alt="">
+        </p>
+        <p><strong>But looks like this:</strong></p>
+        <p>
+          <img src="assets/n-1.png" alt="">
+        </p>
+      </div>
+    </article>
+  </aside>
 </body>
 </html>

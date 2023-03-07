@@ -1,0 +1,86 @@
+:is(aside article, body > article:first-child) {
+  position: absolute;
+  opacity: 0;
+  right: -5%;
+  top: 36px;
+  width: 50%;
+  max-width: 550px;
+  max-height: calc(100vh - 64px);
+  overflow: scroll;
+
+  border: 1px solid black;
+  border-radius: 4px;
+
+  color: white;
+  transition: all 300ms ease-in-out;
+  z-index: 0;
+}
+
+body > article:first-child {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  top: 50%; left: 50%;
+  z-index: 9999;
+  display: block;
+}
+
+:is(aside article header, body > article:first-child header) {
+  border-bottom: 1px solid black;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 1px 16px;
+  background-image: linear-gradient(hsl(0deg, 0%, 25%) 50%, hsl(0deg, 0%, 17%) 0%);
+  box-shadow: inset 1px 1px 0 hsl(0deg, 0%, 35%),
+  inset -1px -1px hsl(0deg, 0%, 20%);
+  text-align: center;
+}
+
+:is(aside article header::before, body > article:first-child header::before) {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: linear-gradient(45deg, hsl(0deg, 0%, 35%) 25%, transparent 25%),
+  linear-gradient(-45deg, hsl(0deg, 0%, 35%) 35%, transparent 25%),
+  linear-gradient(45deg, transparent 75%, hsl(0deg, 0%, 35%) 75%),
+  linear-gradient(-45deg, transparent 75%, hsl(0deg, 0%, 35%) 75%);
+  background-size: 4px 4px;
+  margin: 6px 16px;
+}
+
+:is(aside article header h1, body > article:first-child header h1) {
+  font-size: 1rem;
+  margin: 0 auto;
+  width: fit-content;
+  background-image: linear-gradient(hsl(0deg, 0%, 25%) 50%, hsl(0deg, 0%, 17%) 0%);
+  position: relative;
+  padding: 6px 8px;
+}
+
+:is(aside article header button, body > article:first-child header button) {
+  position: absolute;
+  top: 6.5px;
+  right: 16px;
+  z-index: 2;
+}
+
+:is(aside article div, body > article:first-child div) {
+  padding: 8px 16px;
+  background-image: linear-gradient(to right, hsl(0deg, 0%, 15%) 2px, hsl(0deg, 0%, 13%) 0, hsl(0deg, 0%, 13%) calc(100% - 2px), hsl(0deg, 0%, 15%) 2px);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: inset 0px -2px hsl(0deg, 0%, 15%);
+  height: 100%;
+}
+
+:is(aside article div p img, body > article:first-child div p img) {
+  width: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  aside article div {
+    background-image: linear-gradient(to right, hsl(0deg, 0%, 90%) 2px, hsl(0deg, 0%, 100%) 0, hsl(0deg, 0%, 100%) calc(100% - 2px), hsl(0deg, 0%, 90%) 2px);
+    box-shadow: inset 0px -2px hsl(0deg, 0%, 85%);
+    color: #191818;
+  }
+}

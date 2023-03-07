@@ -1,0 +1,117 @@
+/* General Styling */
+ul li section:first-of-type div {
+  width: 100%;
+  height: 100%;
+  clip-path: var(--clip-path);
+}
+
+/* Gradient Interpolation Module */
+@property --color-one {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: hsl(0deg, 100%, 50%);
+}
+
+@property --color-two {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: hsl(120deg, 100%, 50%);
+}
+
+ul li:first-child section:first-of-type div {
+  --color-one: hsl(0deg, 100%, 50%);
+  --color-two: hsl(120deg, 100%, 50%);
+  background: linear-gradient(to right, var(--color-one), var(--color-two));
+  animation-name: newInterpolation;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+
+body:has(#showInterpolationSection:checked) aside article:first-child {
+  opacity: 1;
+  right: 36px;
+  z-index: 1;
+}
+
+body:has(#showP3Section:checked) aside article:nth-child(2) {
+  opacity: 1;
+  right: 36px;
+  z-index: 1;
+}
+
+body:has(#showNestingSection:checked) aside article:nth-child(3) {
+  opacity: 1;
+  right: 36px;
+  z-index: 1;
+}
+
+body:has(#showP3Section:checked, #showInterpolationSection:checked, #showNestingSection:checked) main {
+  width: calc(100% - 550px);
+}
+
+/* Gradient Interpolation */
+body:has(#oldInterpolation:checked) ul li:first-child section:first-of-type div { animation-name: oldInterpolation; }
+body:has(#oldInterpolation:checked) aside > article:first-child > div > p > button:nth-child(1) { display: none; }
+body:has(#oldInterpolation:not(:checked)) aside > article:first-child > div > p > button:nth-child(2) { display: none; }
+
+/* DISPLAY-P3 */
+body:has(#oldColor:checked) ul li:nth-child(2) section:first-of-type div { background-color: rgb(255, 0, 0 ); }
+body:has(#oldColor:not(:checked)) aside > article:nth-child(2) > div > p > button:nth-child(2) { display: none; }
+body:has(#oldColor:checked) aside > article:nth-child(2) > div > p > button:nth-child(1) { display: none; }
+
+@keyframes newInterpolation {
+  0% {
+    --color-one: hsl(0deg, 100%, 50%);
+    --color-two: hsl(120deg, 100%, 50%);
+  }
+  50% {
+    --color-one: hsl(120deg, 100%, 50%);
+    --color-two: hsl(240deg, 100%, 50%);
+  }
+  100% {
+    --color-one: hsl(0deg, 100%, 50%);
+    --color-two: hsl(120deg, 100%, 50%);
+  }
+}
+
+@keyframes oldInterpolation {
+  0% {
+    background: linear-gradient(to right, hsl(0deg, 100%, 50%), hsl(120deg, 100%, 50%));
+  }
+  50% {
+    background: linear-gradient(to right, hsl(120deg, 100%, 50%), hsl(240deg, 100%, 50%));
+  }
+  100% {
+    background: linear-gradient(to right, hsl(0deg, 100%, 50%), hsl(120deg, 100%, 50%));
+  }
+}
+
+/* P3 Module */
+ul li:nth-child(2) section:first-of-type div {
+  width: 100%;
+  height: 100%;
+  background-color: color(display-p3, 1 0 0);
+}
+
+/* Nesting Module */
+ul li:nth-child(3) section:first-of-type div {
+  background-color: color(display-p3, 1 0 0);
+  position; relative;
+  &:before {
+      content: "";
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%; left: 50%;
+      width: 75%; height: 75%;
+      background-color: color(display-p3, 0 1 0);
+   }
+  &:after {
+     content: "";
+     position: absolute;
+     transform: translate(-50%, -50%);
+     top: 50%; left: 50%;
+     width: 50%; height: 50%;
+     background-color: color(display-p3, 0 0 1);
+   }
+}
