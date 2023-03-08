@@ -1,0 +1,29 @@
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: hsl(0, 0%, 1%);
+  color: hsl(0, 0%, 99%);
+  font-family: Arial, sans-serif;
+}
+
+nav ul {
+  all: unset;
+}
+
+nav ul li {
+  all: unset;
+  display: block;
+}
+
+nav ul li a {
+  all: unset;
+  display: block;
+  padding: 16px;
+  cursor: pointer;
+}
+
+nav ul li:where(:hover, [active]) {
+  background: hsl(0, 0%, 15%);
+}

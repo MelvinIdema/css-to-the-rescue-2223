@@ -1,5 +1,6 @@
 :is(*, *:before, *:after) { box-sizing: border-box; }
 body {
+  overflow: hidden;
   margin: 0;
   background-color: #191818;
   font-family: arial, sans-serif;

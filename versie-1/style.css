@@ -13,7 +13,7 @@ main {
 
 ul {
   --module-size: 150px;
-  --module-depth: calc(var(--module-size) * .1);
+  --module-depth: calc(var(--module-size) * 0.25);
   --columns: 5;
   --rows: 2;
   --Xrotation: 0deg;
@@ -35,10 +35,6 @@ ul {
 
 /* BOX */
 li {
-  --hue: 20;
-  --corner-size: 25px;
-  --clip-path: polygon(var(--corner-size) 0%, calc(100% - var(--corner-size)) 0%, 100% var(--corner-size), 100% calc(100% - var(--corner-size)), calc(100% - var(--corner-size)) 100%, var(--corner-size)100%, 0% calc(100% - var(--corner-size)), 0% var(--corner-size));
-
   all: unset;
   position: relative;
 
@@ -54,18 +50,11 @@ li {
 
     &:before {
        position: absolute;
-       top: 0;
-       height: 100%;
-       width: calc(var(--corner-size) * 1.4);
-       transform-origin: left bottom;
-     }
-
-    &:after {
-       position: absolute;
-       top: 0;
-       height: 100%;
-       width: calc(var(--corner-size) * 1.4);
-       transform-origin: right bottom;
+       transform: translate(-50%, -50%);
+       top: 50%; left: 50%;
+       color: white;
+       font-size: 12px;
+       font-weight: bold;
      }
   }
 }
@@ -74,94 +63,79 @@ li {
 li > div:is(:nth-child(1), :nth-child(2)) {
   width: 100%;
   height: 100%;
-  clip-path: var(--clip-path);
 }
 
 /* LEFT & RIGHT */
 li > div:is(:nth-child(3), :nth-child(4)) {
-  height: calc(100% - (var(--corner-size) * 2));
-  top: var(--corner-size);
+  height: 100%;
   width: var(--module-depth);
   left: calc(var(--module-depth) / 2);
 }
 
 /* TOP & BOTTOM */
 li > div:is(:nth-child(6), :nth-child(5)) {
-  width: calc(100% - (var(--corner-size) * 2));
+  width: 100%;
   height: var(--module-depth);
   top: calc(var(--module-depth) / 2);
-  left: var(--corner-size);
-}
-
-/* BOTTOM CORNERS */
-li > div:is(:nth-child(7), :nth-child(8)) {
-  width: calc(var(--corner-size) * 1.4 + 1px);
-  height: var(--module-depth);
 }
 
 /* Front */
 li > div:nth-child(1) {
-  background-color: hsla(var(--hue), 100%, 20%, var(--opacity));
+  background-color: hsla(240, 100%, 50%, var(--opacity));
   transform: rotateY(0deg) translateZ(calc(var(--module-depth) / 2));
+
+  &:before {
+    content: "FRONT";
+  }
 }
 
 /* Back */
 li > div:nth-child(2) {
-  background-color: hsla(var(--hue), 100%, 20%, var(--opacity));
+  background-color: hsla(100, 100%, 50%, var(--opacity));
   transform: rotateY(180deg) translateZ(calc(var(--module-depth) / 2));
+
+  &:before {
+     content: "BACK";
+   }
 }
 
 /* Right */
 li > div:nth-child(3) {
-  background-color: hsla(var(--hue), 100%, 12.5%, var(--opacity));
-  transform: rotateY(90deg) translateZ(calc(var(--module-size) - var(--module-depth)));
+  background-color: hsla(60, 100%, 50%, var(--opacity));
+  transform: rotateY(90deg) translateZ(calc(var(--module-size) - var(--module-depth) - 1px));
+
+  &:before {
+     content: "RIGHT";
+   }
 }
 
 /* Left */
 li > div:nth-child(4) {
-  background-color: hsla(var(--hue), 100%, 12.5%, var(--opacity));
+  background-color: hsla(300, 100%, 50%, var(--opacity));
   transform: rotateY(-90deg) translateZ(var(--module-depth));
+
+  &:before {
+     content: "LEFT";
+   }
 }
 
 /* Top */
 li > div:nth-child(5) {
-  background-color: hsla(var(--hue), 100%, 12.5%, var(--opacity));
+  background-color: hsla(0, 100%, 50%, var(--opacity));
   transform: rotateX(90deg) translateZ(var(--module-depth));
-  transform-style: preserve-3d;
 
   &:before {
-     content: "";
-     background: hsla(var(--hue), 100%, 5%, var(--opacity));
-     left: 100%;
-     transform: rotateY(45deg);
-   }
-
-  &:after {
-     content: "";
-     background: hsla(var(--hue), 100%, 5%, var(--opacity));
-     right: 100%;
-     transform: rotateY(-45deg);
+     content: "TOP";
    }
 }
 
 /* Bottom */
 li > div:nth-child(6) {
-  background-color: hsla(var(--hue), 100%, 12.5%, var(--opacity));
-  transform: rotateX(-90deg) translateZ(calc(var(--module-size) - var(--module-depth)));
-  transform-style: preserve-3d;
+  background-color: hsla(30, 100%, 50%, var(--opacity));
+  transform: rotateX(-90deg) translateZ(calc(var(--module-size) - var(--module-depth) - 1px));
 
   &:before {
-    content: "";
-    background: hsla(var(--hue), 100%, 5%, var(--opacity));
-    left: 100%;
-    transform: rotateY(45deg);
-   }
-
-  &:after {
-     content: "";
-     background: hsla(var(--hue), 100%, 5%, var(--opacity));
-     right: 100%;
-     transform: rotateY(-45deg);
+     content: "BOTTOM";
    }
 }
 
