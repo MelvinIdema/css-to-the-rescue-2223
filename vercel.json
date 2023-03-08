@@ -1,8 +1,16 @@
 {
   "redirects": [
     {
-      "source": "/:path",
-      "destination": ":path"
+      "source": "/proces",
+      "destination": "/proces/"
+    },
+    {
+      "source": "/versie-1",
+      "destination": "/versie-1/"
+    },
+    {
+      "source": "/versie-2",
+      "destination": "/versie-2/"
     }
   ]
 }
